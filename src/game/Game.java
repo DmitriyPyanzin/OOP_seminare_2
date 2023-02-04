@@ -16,14 +16,14 @@ class Game {
         // Участники предолевают препятствия по очереди.
 
         Participant[] participants = createParticipans();
-        Obstacle[] obstacles = createParticipans();
+        Obstacle[] obstacles = CreateObstacles();
 
         for (Participant participant : participants) {
             for (Obstacle obstacle : obstacles) {
                 boolean overcome = obstacle.overcome(participant);
                 if(overcome) {
                     System.out.println(participant.getName() +
-                            " преодолел препятствие\"" + obstacle.type() + "\"");
+                            " преодолел препятствие \"" + obstacle.type() + "\"");
                 }
             }
         }
@@ -40,9 +40,9 @@ class Game {
 
     private static Obstacle[] CreateObstacles() {
         return new Obstacle[] {
-                new Road(9),
-                new SwimmingPool(4),
-                new Wall(4)
+                new RoadObstacleAdapter(new Road(9)),
+                new SwimmingPoolObstacleAdapter(new SwimmingPool(4)),
+                new WallObstacleAdapter(new Wall(4))
         };
     }
 }

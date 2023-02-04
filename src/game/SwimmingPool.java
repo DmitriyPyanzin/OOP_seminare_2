@@ -16,7 +16,7 @@ public class SwimmingPool {
 
     }
 
-    public void overcome(Swimmable swimmable) {
+    public boolean overcome(Swimmable swimmable) {
         int swimLimit = swimmable.getSwimLimit();
         return swimLimit >= distance;
     }

@@ -16,7 +16,7 @@ public class Road {
 
     }
 
-    public void overcome(Runnable runnable) {
+    public boolean overcome(Runnable runnable) {
         int distanceLimit = runnable.getDistanceLimit();
         return distanceLimit >= distance;
     }

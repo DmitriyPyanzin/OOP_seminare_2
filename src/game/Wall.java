@@ -16,7 +16,7 @@ public class Wall {
 
     }
 
-    public void overcome(Jumpable jumpable) {
+    public boolean overcome(Jumpable jumpable) {
         int jumpLimit = jumpable.getJumpLimit();
         return jumpLimit >= height;
     }
