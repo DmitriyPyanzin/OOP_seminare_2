@@ -1,6 +1,9 @@
-package game;
+package game.Obstacles.Wall;
 
-public class WallObstacleAdapter implements Obstacle{
+import game.Obstacles.Obstacle;
+import game.Participant.Participant;
+
+public class WallObstacleAdapter implements Obstacle {
 
     private final Wall wall;
 

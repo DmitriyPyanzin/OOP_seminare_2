@@ -1,4 +1,6 @@
-package game;
+package game.Obstacles.Road;
+
+import game.Participant.HasName;
 
 public interface Runnable extends HasName {
 

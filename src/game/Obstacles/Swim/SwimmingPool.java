@@ -1,4 +1,4 @@
-package game;
+package game.Obstacles.Swim;
 
 public class SwimmingPool {
 
@@ -19,14 +19,5 @@ public class SwimmingPool {
     public boolean overcome(Swimmable swimmable) {
         int swimLimit = swimmable.getSwimLimit();
         return swimLimit >= distance;
-    }
-
-    /**
-     * Метод получения значения поля
-     * @return - возврат дистанции бассейна
-     */
-    public int getDistance() {
-        return distance;
-
     }
 }

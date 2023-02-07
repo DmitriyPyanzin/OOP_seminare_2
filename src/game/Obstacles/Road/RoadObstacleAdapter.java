@@ -1,6 +1,9 @@
-package game;
+package game.Obstacles.Road;
 
-public class RoadObstacleAdapter implements Obstacle{
+import game.Obstacles.Obstacle;
+import game.Participant.Participant;
+
+public class RoadObstacleAdapter implements Obstacle {
 
     private final Road road;
 

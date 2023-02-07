@@ -1,6 +1,8 @@
-package game;
+package game.Obstacles.Wall;
 
-public interface Jumpable extends HasName{
+import game.Participant.HasName;
+
+public interface Jumpable extends HasName {
 
     /**
      * интерфейс прыжка

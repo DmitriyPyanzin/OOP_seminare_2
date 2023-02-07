@@ -1,4 +1,4 @@
-package game;
+package game.Obstacles.Wall;
 
 public class Wall {
 
@@ -19,14 +19,5 @@ public class Wall {
     public boolean overcome(Jumpable jumpable) {
         int jumpLimit = jumpable.getJumpLimit();
         return jumpLimit >= height;
-    }
-
-    /**
-     * Метод получения значения поля
-     * @return - возврат высоты стены
-     */
-    public int getHeight() {
-        return height;
-
     }
 }

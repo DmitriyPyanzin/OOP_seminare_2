@@ -1,6 +1,11 @@
-package game;
+package game.Participant;
 
-public abstract class Participant implements Runnable, Swimmable, Jumpable {
+import game.Obstacles.Wall.Jumpable;
+import game.Obstacles.Road.Runnable;
+import game.Obstacles.Swim.Swimmable;
+import game.Obstacles.Rope.Ropeable;
+
+public abstract class Participant implements Runnable, Swimmable, Jumpable, Ropeable {
 
     /**
      * Имя участника
@@ -23,18 +28,23 @@ public abstract class Participant implements Runnable, Swimmable, Jumpable {
     private final int jumpLimit;
 
     /**
+     * Как высоко залезет
+     */
+    private final int ropeLimit;
+
+    /**
      * Конструктор характеристики спортсмена
      * @param name - имя
      * @param distanceLimit - расстояние
      * @param jumpLimit - высота
      * @param swimLimit - бассейн
      */
-    public Participant(String name, int distanceLimit, int swimLimit, int jumpLimit) {
+    public Participant(String name, int distanceLimit, int swimLimit, int jumpLimit, int ropeLimit) {
         this.name = name;
         this.distanceLimit = distanceLimit;
         this.swimLimit = swimLimit;
         this.jumpLimit = jumpLimit;
-
+        this.ropeLimit = ropeLimit;
 
     }
 
@@ -74,6 +84,16 @@ public abstract class Participant implements Runnable, Swimmable, Jumpable {
     @Override
     public int getJumpLimit() {
         return jumpLimit;
+
+    }
+
+    /**
+     * Высота каната
+     * @return - как высоко залезет
+     */
+    @Override
+    public int getRopeLimit() {
+        return ropeLimit;
 
     }
 }

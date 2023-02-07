@@ -1,6 +1,8 @@
-package game;
+package game.Obstacles.Swim;
 
-public interface Swimmable extends HasName{
+import game.Participant.HasName;
+
+public interface Swimmable extends HasName {
 
     /**
      * Длина заплыва

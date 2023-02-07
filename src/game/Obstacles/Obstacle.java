@@ -1,4 +1,6 @@
-package game;
+package game.Obstacles;
+
+import game.Participant.Participant;
 
 public interface Obstacle {
 

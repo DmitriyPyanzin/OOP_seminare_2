@@ -1,6 +1,9 @@
-package game;
+package game.Obstacles.Swim;
 
-public class SwimmingPoolObstacleAdapter implements Obstacle{
+import game.Obstacles.Obstacle;
+import game.Participant.Participant;
+
+public class SwimmingPoolObstacleAdapter implements Obstacle {
 
     private final SwimmingPool swimmingPool;
 

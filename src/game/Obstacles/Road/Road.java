@@ -1,4 +1,4 @@
-package game;
+package game.Obstacles.Road;
 
 public class Road {
 
@@ -19,14 +19,5 @@ public class Road {
     public boolean overcome(Runnable runnable) {
         int distanceLimit = runnable.getDistanceLimit();
         return distanceLimit >= distance;
-    }
-
-    /**
-     * Метод получения значения поля
-     * @return - возврат дистанции
-     */
-    public int getDistance() {
-        return distance;
-
     }
 }

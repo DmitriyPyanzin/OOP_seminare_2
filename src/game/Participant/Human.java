@@ -1,4 +1,4 @@
-package game;
+package game.Participant;
 
 public class Human extends Participant {
 
@@ -9,8 +9,8 @@ public class Human extends Participant {
      * @param swimLimit - длина заплыва
      * @param jumpLimit - высота прыжка
      */
-    public Human(String name, int distanceLimit, int swimLimit, int jumpLimit) {
-        super(name, distanceLimit, swimLimit, jumpLimit);
+    public Human(String name, int distanceLimit, int swimLimit, int jumpLimit, int ropeLimit) {
+        super(name, distanceLimit, swimLimit, jumpLimit, ropeLimit);
 
     }
 }

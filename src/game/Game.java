@@ -1,13 +1,20 @@
 package game;
 
+import game.Obstacles.*;
+import game.Participant.*;
+import game.Obstacles.Road.*;
+import game.Obstacles.Rope.*;
+import game.Obstacles.Swim.*;
+import game.Obstacles.Wall.*;
+
 class Game {
 
     /**
-     * 0. Переварить весь код.
-     * 1. В пакете org.example.lesson2.game проделать такую же процедуру, как и с WallAdapter, для остальных препятствий.
+     * 0. Переварить весь код. +
+     * 1. В пакете org.example.lesson2.game проделать такую же процедуру, как и с WallAdapter, для остальных препятствий. +
      * 2. Общие куски для препятствий вынести в какой-то базовый класс AbstractObstacle.
      * 3*. Придумать какой-то свой тип препятствия.
-     * Проанализировать, что принципиально изменилось в структуре проекта при добавлении нового типа.
+     * Проанализировать, что принципиально изменилось в структуре проекта при добавлении нового типа. +
      *
      */
     public static void main(String[] args) {
@@ -19,22 +26,29 @@ class Game {
         Obstacle[] obstacles = CreateObstacles();
 
         for (Participant participant : participants) {
+            System.out.print(participant.getName());
             for (Obstacle obstacle : obstacles) {
                 boolean overcome = obstacle.overcome(participant);
                 if(overcome) {
-                    System.out.println(participant.getName() +
-                            " преодолел препятствие \"" + obstacle.type() + "\"");
+                    System.out.print(" преодолел препятствие \"" + obstacle.type() + "\"");
+                } else {
+                    System.out.print(" не справился с \"" + obstacle.type() + "\"");
                 }
+                System.out.print(",");
             }
+            System.out.print("\b.");
+            System.out.println();
         }
     }
 
     private static Participant[] createParticipans() {
         return new Participant[] {
-                new Cat("Cat-1", 10, 2),
-                new Cat("Cat-2", 8, 5),
-                new Human("Human-1", 8, 5, 3),
-                new Cheater("Cheter-1")
+                new Cat("Cat-1", 10, 2, 10),
+                new Cat("Cat-2", 8, 5, 8),
+                new Human("Human-1", 8, 5, 3, 9),
+                new Cheater("Cheter-1"),
+                new Human("Human-2", 9, 4, 5, 5),
+                new Snake("Snake-1", 9, 6, 7),
         };
     }
 
@@ -42,7 +56,8 @@ class Game {
         return new Obstacle[] {
                 new RoadObstacleAdapter(new Road(9)),
                 new SwimmingPoolObstacleAdapter(new SwimmingPool(4)),
-                new WallObstacleAdapter(new Wall(4))
+                new WallObstacleAdapter(new Wall(4)),
+                new RopeObstacleAdapter(new RopeClimbing(6)),
         };
     }
 }
