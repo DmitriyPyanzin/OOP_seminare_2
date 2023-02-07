@@ -26,17 +26,23 @@ class Game {
         Obstacle[] obstacles = CreateObstacles();
 
         for (Participant participant : participants) {
-            System.out.print(participant.getName());
+            System.out.print("\t" + participant.getName());
+            System.out.println();
+            int count = 0;
             for (Obstacle obstacle : obstacles) {
                 boolean overcome = obstacle.overcome(participant);
                 if(overcome) {
                     System.out.print(" преодолел препятствие \"" + obstacle.type() + "\"");
+                    count++;
                 } else {
                     System.out.print(" не справился с \"" + obstacle.type() + "\"");
                 }
-                System.out.print(",");
+                System.out.println(",");
             }
-            System.out.print("\b.");
+            if (count == 4)
+                System.out.println(" УРА!!!!! " + participant.getName() + " прошел все испытания.");
+            else
+                System.out.println(" ЭХ.... " + participant.getName() + " прошел всего " + count + " испытаний!");
             System.out.println();
         }
     }
@@ -48,6 +54,7 @@ class Game {
                 new Human("Human-1", 8, 5, 3, 9),
                 new Cheater("Cheter-1"),
                 new Human("Human-2", 9, 4, 5, 5),
+                new Human("Human-3", 9, 5, 4, 6),
                 new Snake("Snake-1", 9, 6, 7),
         };
     }

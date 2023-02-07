@@ -1,23 +1,20 @@
 package game.Obstacles.Rope;
 
-public class RopeClimbing {
+import game.Obstacles.AbstractObstacle;
 
-    /**
-     * Высота каната
-     */
-    private final int height;
+public class RopeClimbing extends AbstractObstacle {
 
     /**
      * Конструктор
-     * @param distance - высота каната
+     * @param lengthRope - высота каната
      */
-    public RopeClimbing(int distance) {
-        this.height = distance;
+    public RopeClimbing(int lengthRope) {
+        super(lengthRope);
 
     }
 
     public boolean overcome(Ropeable ropeable) {
         int ropeLimit = ropeable.getRopeLimit();
-        return ropeLimit >= height;
+        return ropeLimit >= getParametr();
     }
 }

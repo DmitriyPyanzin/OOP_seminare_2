@@ -1,23 +1,20 @@
 package game.Obstacles.Wall;
 
-public class Wall {
+import game.Obstacles.AbstractObstacle;
 
-    /**
-     * Высота стены
-     */
-    private final int height;
+public class Wall extends AbstractObstacle {
 
     /**
      * Конструктор
-     * @param distance - высота стены
+     * @param height - высота стены
      */
-    public Wall(int distance) {
-        this.height = distance;
+    public Wall(int height) {
+        super(height);
 
     }
 
     public boolean overcome(Jumpable jumpable) {
         int jumpLimit = jumpable.getJumpLimit();
-        return jumpLimit >= height;
+        return jumpLimit >= getParametr();
     }
 }

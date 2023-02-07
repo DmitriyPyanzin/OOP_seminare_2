@@ -1,23 +1,20 @@
 package game.Obstacles.Swim;
 
-public class SwimmingPool {
+import game.Obstacles.AbstractObstacle;
 
-    /**
-     * длина бассейна
-     */
-    private final int distance;
+public class SwimmingPool extends AbstractObstacle {
 
     /**
      * Конструктор
-     * @param distance - дистанция бассейна
+     * @param distancePool - дистанция бассейна
      */
-    public SwimmingPool(int distance) {
-        this.distance = distance;
+    public SwimmingPool(int distancePool) {
+        super(distancePool);
 
     }
 
     public boolean overcome(Swimmable swimmable) {
         int swimLimit = swimmable.getSwimLimit();
-        return swimLimit >= distance;
+        return swimLimit >= getParametr();
     }
 }

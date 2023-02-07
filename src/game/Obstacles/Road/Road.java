@@ -1,23 +1,20 @@
 package game.Obstacles.Road;
 
-public class Road {
+import game.Obstacles.AbstractObstacle;
 
-    /**
-     * дистанция дорожки
-     */
-    private final int distance;
+public class Road extends AbstractObstacle {
 
     /**
      * Конструктор
-     * @param distance - дистанция
+     * @param distanceRoad - дистанция
      */
-    public Road(int distance) {
-        this.distance = distance;
+    public Road(int distanceRoad) {
+        super(distanceRoad);
 
     }
 
     public boolean overcome(Runnable runnable) {
         int distanceLimit = runnable.getDistanceLimit();
-        return distanceLimit >= distance;
+        return distanceLimit >= getParametr();
     }
 }
